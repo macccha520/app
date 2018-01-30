@@ -1,0 +1,46 @@
+/* pages/extract.wxss */
+.extract{
+	text-align: center;
+}
+.extract-put{
+	width:600rpx;
+	margin:100px auto;
+	border-bottom: 1px solid #ccc;
+	text-align: left;
+	margin-bottom: 20px;
+}
+.extract-put text{
+	display: inline-block;
+	font-size: 50px;
+}
+.extract-put input{
+	display: inline-block;
+}
+.hint{
+	font-size: 13px;
+}
+.btn-extract{
+	display: flex;
+	justify-content: center;
+	margin-top: 60px;
+}
+.btn-extract view{
+	width:80px;
+	height:65rpx;
+	line-height: 65rpx;
+	background: #1aad19;
+	color:#ffffff;
+	margin-right: 20px;
+	border-radius: 3px;
+}
+.service{
+	width:100%;
+	font-size: 12px;
+	position: fixed;
+	left:0px;
+	bottom: 10px;
+	text-align: center;
+}
+.service text{
+	margin-right: 20px;
+}

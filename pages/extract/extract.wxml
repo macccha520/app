@@ -1,0 +1,17 @@
+<!--pages/extract.wxml-->
+<view class="extract">
+	<view style="margin-top:100px;">提现到零钱</view>
+    <view class="extract-put">
+    	<text>￥</text>
+    	<input placeholder="" auto-focus/>
+    </view>
+    <text class="hint">工作日提现到零钱,收取2%的手续费</text>
+    <view class="btn-extract">
+    	<view>确定</view>
+    	<view>返回</view>
+    </view>
+    <view class="service">
+    	<text>常见问题</text>
+    	<text>联系客服</text>
+    </view>
+</view>

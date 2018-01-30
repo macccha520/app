@@ -1,0 +1,23 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="container-bac">
+    <image src="../../images/bac.png" mode="widthFix"></image>
+  </view>
+  <view class="content">
+    <view class="logo-container">
+      <view class="logo">
+        <image src="../../images/timg.jpg"></image>
+      </view>
+      <view class="user-name">{{userInfo.nickName}}</view>
+    </view>
+    <view class="slider-container">
+      <view class="user-notice" bindtap="noticePage">用户须知</view>
+      <view class="obtain-packet" bindtap="packetPage">已收到红包</view>
+    </view>
+    <view class="packet-btn" bindtap="uploadPage">送惊喜讨红包</view>
+    <view class="btn-container">
+      <view bindtap="rankPage">排行榜</view>
+      <view bindtap="extractPage">一键提现</view>
+    </view>
+  </view>
+</view>

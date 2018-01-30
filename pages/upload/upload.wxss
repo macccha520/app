@@ -1,0 +1,71 @@
+/* pages/upload.wxss */
+.upload{
+	text-align: center;
+}
+.upload-container{
+	width:600rpx;
+	min-height:400rpx;
+	border:1px solid #ccc;
+	margin:30rpx auto;
+	text-align: left;
+	position: relative;
+}
+.upload-img{
+	width:100%;
+}
+.upload-list{
+	/*position: absolute;
+	left:20rpx;
+	bottom: 5px;*/
+	margin-left: 20rpx;
+}
+.upload-icon{
+	display: inline-block;
+	width:30px;
+	height:25px;
+	margin-right:10px;
+}
+.upload-emoji{
+	display: inline-block;
+	width:25px;
+	height:25px;
+	margin-right:5px;
+}
+.text-btn{
+	width:600rpx;
+	height:60rpx;
+	line-height: 60rpx;
+	margin:30rpx auto;
+	border:1px solid #ccc;
+	font-size: 16px;
+}
+.btn-share{
+   width:600rpx;
+   margin:30rpx auto;
+   display: flex;
+   justify-content: space-between;
+   text-align: center;
+}
+.btn-share button{
+  width:270rpx;
+  height:70rpx;
+  line-height: 70rpx;
+  background: #ff0808;
+  color:#ffffff;
+  border-radius: 6px;
+  font-size: 15px;
+}
+.btn-container{
+	width:600rpx;
+	margin:100rpx auto;
+	display: flex;
+	justify-content: space-between;
+	text-align: center;
+}
+.btn-container view{
+	width:260rpx;
+	height:65rpx;
+	line-height: 65rpx;
+	background: #ff0808;
+	color:#ffffff;
+}

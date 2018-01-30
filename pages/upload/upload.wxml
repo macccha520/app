@@ -1,0 +1,30 @@
+<!--pages/upload.wxml-->
+<view class="upload">
+	<view class="logo-container">
+	  <view class="logo">
+	    <image src="../../images/timg.jpg"></image>
+	  </view>
+	  <view class="user-name">{{userInfo.nickName}}</view>
+	</view>
+    <view class="text-btn" bindtap="getText">系统随机祝福语</view>
+    <view class="text-btn">{{text}}</view>
+	<view class="upload-container">
+		<!-- <view class="section">
+		  <textarea auto-height placeholder="{{text}}" />
+		</view> -->
+		<image src="{{imageUrl}}" mode="scaleToFill" class="upload-img"></image>
+		<view class="upload-list">
+			<!-- <image class="upload-icon" src="../../images/camera.png" bindtap="uploadImg"></image> -->
+			<image class="upload-icon" src="../../images/photo.png" bindtap="uploadImg"></image>
+			<!-- <image class="upload-emoji" src="../../images/emoji.png"></image> -->
+		</view>
+	</view>
+	<view class="btn-share">
+	  <button type="primary" open-type="share"> 发给朋友讨红包 </button>
+      <button type="primary"> 分享到朋友圈 </button>
+	</view>
+	<view class="btn-container">
+	  <view bindtap="rankPage">排行榜</view>
+	  <view bindtap="extractPage">一键提现</view>
+	</view>
+</view>

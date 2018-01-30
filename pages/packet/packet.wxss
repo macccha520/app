@@ -1,0 +1,8 @@
+/* pages/packet.wxss */
+.packet{
+	text-align: center;
+}
+.receive-packet{
+	margin-top: 100px;
+	margin-bottom: 30px;
+}

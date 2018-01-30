@@ -1,0 +1,5 @@
+<!--pages/packet.wxml-->
+<view class="packet">
+  <view class="receive-packet">已收到红包</view>
+  <text>金额:80元</text>
+</view>

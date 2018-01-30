@@ -1,0 +1,67 @@
+/**index.wxss**/
+.container{
+	position: relative;
+}
+.container-bac{
+	width:100%;
+	position: absolute;
+	left:0px;
+	top:-50px;
+}
+.container-bac image{
+	width:100%;
+}
+.content{
+	width:100%;
+	position: absolute;
+	left:0px;
+	top:0px;
+}
+.slider-container{
+  margin-top: 20rpx;
+  text-align: center;
+  height:150rpx;
+  position: relative;
+  font-size: 13px;
+}
+.slider-container view{
+	width:260rpx;
+	height:60rpx;
+	line-height: 60rpx;
+	border:1px solid #f13612;
+	color:#f13612;
+	border-radius: 20px;
+	position: absolute;
+	right:-20px;
+}
+.user-notice{
+   top:0px; 
+}
+.obtain-packet{
+	top:80rpx;
+}
+.packet-btn{
+  width:500rpx;
+  height:80rpx;
+  line-height: 80rpx;
+  text-align: center;
+  background: #ffbe14;
+  margin:600rpx auto;
+  color:#ff0808;
+  border-radius:10px;
+  margin-bottom: 60px;
+}
+.btn-container{
+	width:650rpx;
+	margin:30rpx auto;
+	display: flex;
+	justify-content: space-between;
+	text-align: center;
+}
+.btn-container view{
+	width:260rpx;
+	height:65rpx;
+	line-height: 65rpx;
+	background: #ff0808;
+	color:#ffffff;
+}

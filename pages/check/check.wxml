@@ -1,0 +1,15 @@
+<!--pages/check.wxml-->
+<view class="check">
+	<view class="logo-container">
+      <view class="logo">
+        <image src="../../images/timg.jpg"></image>
+      </view>
+      <view class="user-name">{{userInfo.nickName}}</view>
+    </view>
+	<view class="check-image">
+		<image src="../../images/check.jpg"></image>
+	</view>
+	<text class="check-text">某某某给你准备新年惊喜</text>
+	<view class="check-btn">塞(随机金额红包)查看</view>
+</view>
+

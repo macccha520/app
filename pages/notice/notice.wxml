@@ -1,0 +1,4 @@
+<!--pages/notice.wxml-->
+<view class="notice">
+	<text>用户须知:</text>
+</view>
