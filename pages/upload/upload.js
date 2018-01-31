@@ -1,4 +1,8 @@
 // pages/upload.js
+
+const app = getApp()
+
+
 Page({
   data: {
     userInfo: {},
