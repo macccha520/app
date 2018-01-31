@@ -13,13 +13,13 @@ Page({
   },
   onLoad: function (options) {
     const self = this
-    wx.getStorage({
-      key: 'userinfo',
-      success: function(res) {
-          self.setData({
-            userInfo: res.data
-          })
-      } 
+      wx.getStorage({
+        key: 'userinfo',
+        success: function(res) {
+            self.setData({
+              userInfo: res.data
+            })
+        } 
     })
   },
   onShareAppMessage: function (res) {
@@ -29,13 +29,14 @@ Page({
       return {
         title: '我刚上传了一张照片,看看是啥',
         path: 'pages/check/check',
+        imageUrl: wx.getStorageSync('uploadFile'),
         success: function(res) {
           console.log('success')
         },
         fail: function(res) {
           console.log('error',res)
         }
-      }
+     }
   },
   uploadImg(){
     const self = this
@@ -47,7 +48,7 @@ Page({
         // 返回选定照片的本地文件路径列表，tempFilePath可以作为img标签的src属性显示图片
         var tempFilePaths = res.tempFilePaths
         self.setData({
-          imageUrl: tempFilePaths[0]
+          imageUrl: tempFilePaths[0]  
         })
 
         wx.uploadFile({
@@ -55,11 +56,12 @@ Page({
             filePath: tempFilePaths[0],
             name: 'image',
             formData:{
-              'user': 'test'
+              'openid': wx.getStorageSync("OPEN_ID")
             },
-            success: function(res){
-              var data = res.data
-              console.log('upload',res)
+            success: function(resp){
+              var data = JSON.parse(resp.data)
+              wx.setStorageSync('uploadFile', data.imgurl)
+             
             },
             fail: function(err){
               console.log('err',err)

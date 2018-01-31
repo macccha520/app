@@ -1,4 +1,7 @@
 //app.js
+ 
+var SESSION_KEY=''//储存获取到session_key  
+
 App({
   onLaunch: function () {
     // 登录
@@ -14,6 +17,9 @@ App({
             },
             success: function(res) {
                 console.log('codecode',res.data)
+
+                wx.setStorageSync( "OPEN_ID", res.data.openid)
+                wx.setStorageSync( "SESSION_KEY", res.data.session_key)
             }
           })
 
@@ -33,8 +39,12 @@ App({
                wx.request({
                   url: 'https://bidou666.cn/tk/public/wx/user/getUserInfodetail',
                   data: {
-                    userdata: res
-                  }
+                      userdata: res,
+                      session_key : wx.getStorageSync( "SESSION_KEY"),
+                  },
+                  success: function(resp) {
+                       wx.setStorageSync( "userInfo", res.data)
+                  },
               })
               // 可以将 res 发送给后台解码出 unionId
               this.globalData.userInfo = res.userInfo
