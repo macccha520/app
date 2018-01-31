@@ -6,7 +6,8 @@
     "pages/packet/packet",
     "pages/rank/rank",
     "pages/extract/extract",
-    "pages/check/check"
+    "pages/check/check",
+    "pages/common/common"
   ],
   "window": {
     "backgroundTextStyle": "light",

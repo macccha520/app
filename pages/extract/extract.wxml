@@ -11,7 +11,7 @@
     	<view>返回</view>
     </view>
     <view class="service">
-    	<text>常见问题</text>
+    	<text bindtap="commonPage">常见问题</text>
     	<text>联系客服</text>
     </view>
 </view>

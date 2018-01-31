@@ -1,4 +1,17 @@
 <!--pages/notice.wxml-->
 <view class="notice">
-	<text>用户须知:</text>
+	<view class="common-title">用户须知:</view>
+	<text class="common-text">逗利怎么玩?</text>
+	<view>点击"送惊喜逗利是",上传一张个人喜欢的图片(可以是自拍,有趣的图片,风景)发送向朋友讨红包,朋友收到链接后塞入系统随机生成的红包金额(￥5.2--￥20.18)即可查阅您上传的惊喜,点击"已收红包"或"一键提现"即可将您要到的红包提现到零钱或银行卡。</view>
+	<view>注:此游戏需用户申请提现,收到红包非自动划到零钱!</view>
+	<text class="common-text">在哪里提现?提现收取手续费吗?</text>
+	<view>在"一键提现",进入提现页面,输入金额即提现,提现金额每次至少2元,平台收取2%的手续费。</view>
+	<text>提现需要多久到账?</text>
+    <view>提现申请成功后1-5个工作日会到帐微信零钱(或银行卡),请耐心等候哦。如有疑问欢迎随时联系客服咨询</view>
+    <text class="common-text">未及时提现的红包会怎样处理?</text>
+    <view>请用户将收到的红包及时提现,如超过2018年12月31日未提现,本平台会将相关金额捐献给公益组织</view>
+    <text>如何联系客服?</text>
+    <view>点击"已收到红包"或"一键提现"进入提现界面,点击下方的常见问题即可联系客服。</view>
+    <text class="common-text">游戏仅为逗大家新年一乐,请大家文明参与游乐!</text>
+    <view class="common-btn" bindtap="indexPage">返回首页</view>
 </view>

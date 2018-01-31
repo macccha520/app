@@ -1,4 +1,4 @@
-// pages/extract.js
+// pages/common.js
 Page({
   data: {
   
@@ -9,9 +9,9 @@ Page({
   onShareAppMessage: function () {
   
   },
-  commonPage(){
+  indexPage(){
     wx.navigateTo({
-      url: '../common/common'
+      url: '../index/index'
     })
   }
 })

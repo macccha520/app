@@ -51,22 +51,18 @@ Page({
         })
 
         wx.uploadFile({
-            url: 'https://www.bidou666.cn/tk/public/wx/user/uploadUserImgs', 
+            url: 'https://bidou666.cn/tk/public/wx/user/uploadUserImgs',
             filePath: tempFilePaths[0],
             name: 'image',
-            header: {
-            'content-type':'multipart/form-data'
-            }, 
             formData:{
               'user': 'test'
             },
             success: function(res){
               var data = res.data
-              console.log(data)
-              
+              console.log('upload',res)
             },
-            fail: function(res){
-                console.log(res)
+            fail: function(err){
+              console.log('err',err)
             }
         })
       }

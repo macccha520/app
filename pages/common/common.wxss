@@ -1,5 +1,5 @@
-/* pages/notice.wxss */
-.notice{
+/* pages/common.wxss */
+.common{
 	text-align: left;
 	padding:10px 20px;
 	font-size: 13px;

@@ -47,7 +47,7 @@
   text-align: center;
   background: #ffbe14;
   margin:600rpx auto;
-  color:#ff0808;
+  color:#f13612;
   border-radius:10px;
   margin-bottom: 60px;
 }
@@ -62,6 +62,6 @@
 	width:260rpx;
 	height:65rpx;
 	line-height: 65rpx;
-	background: #ff0808;
+	background: #f13612;
 	color:#ffffff;
 }
