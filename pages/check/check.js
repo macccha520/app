@@ -4,6 +4,8 @@ Page({
     userInfo: {}
   },
   onLoad: function (options) {
+    console.log(options)     
+    console.log("接收到的参数是str="+options.str);  
     const self = this
     wx.getStorage({
       key: 'userinfo',

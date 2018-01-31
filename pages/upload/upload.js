@@ -24,12 +24,12 @@ Page({
   },
   onShareAppMessage: function (res) {
       if (res.from === 'button') {
-         console.log(res.target)         // 来自页面内转发按钮  
+         //console.log(res.target)            // 来自页面内转发按钮  
       }
       return {
         title: '我刚上传了一张照片,看看是啥',
-        path: 'pages/check/check',
-        imageUrl: wx.getStorageSync('uploadFile'),
+        path: 'pages/check/check?packet_id='+ wx.getStorageSync('packet_id'),
+        imageUrl: wx.getStorageSync('uploadFile') ? wx.getStorageSync('uploadFile') : '../../images/timg.jpg',
         success: function(res) {
           console.log('success')
         },
@@ -56,12 +56,13 @@ Page({
             filePath: tempFilePaths[0],
             name: 'image',
             formData:{
-              'openid': wx.getStorageSync("OPEN_ID")
+              'openid': wx.getStorageSync("OPEN_ID"),
+              'text': wx.getStorageSync("text")
             },
             success: function(resp){
-              var data = JSON.parse(resp.data)
-              wx.setStorageSync('uploadFile', data.imgurl)
-             
+                var data = JSON.parse(resp.data)
+                wx.setStorageSync('uploadFile', data.imgurl)
+                wx.setStorageSync('packet_id',1)
             },
             fail: function(err){
               console.log('err',err)
@@ -88,6 +89,7 @@ Page({
   getText(){
     let num = Math.random()*10
     num = Math.ceil(num)
+    wx.setStorageSync("text",this.data.textList[num])
     this.setData({
       text: this.data.textList[num]
     })
