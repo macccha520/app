@@ -31,15 +31,22 @@ Page({
       if (res.from === 'button') {
          console.log(res.target)         // 来自页面内转发按钮  
       }
-      return {
-        title: '我刚上传了一张照片,看看是啥',
-        path: 'pages/check/check',
-        success: function(res) {
-          console.log('success')
-        },
-        fail: function(res) {
-          console.log('error',res)
+
+      if( wx.getStorageSync('imgurl') && wx.getStorageSync('packet_id') && wx.getStorageSync('order_id'))
+      {
+        return {
+          title: '我刚上传了一张照片,看看是啥',
+          path: 'pages/check/check?packet_id='+ wx.getStorageSync('packet_id')+'&order_id='+ wx.getStorageSync('order_id'),
+          imageUrl : wx.getStorageSync('imgurl'),
+          success: function(res) {
+            console.log('success')
+          },
+          fail: function(res) {
+            console.log('error',res)
+          }
         }
+      } else {
+
       }
   },
   uploadImg(){
@@ -54,17 +61,23 @@ Page({
         self.setData({
           imageUrl: tempFilePaths[0]
         })
-
         wx.uploadFile({
             url: 'https://bidou666.cn/tk/public/wx/user/uploadUserImgs',
             filePath: tempFilePaths[0],
             name: 'image',
             formData:{
-              'user': 'test'
+              'openid' :   wx.getStorageSync('openid'),
+              'text' :    wx.getStorageSync('text') ? wx.getStorageSync('text') : '春风得意马蹄急，愿你幸福又如意'
             },
             success: function(res){
-              var data = res.data
-              console.log('upload',res)
+              
+              var data  = JSON.parse(res.data)
+              //返回的红包id
+              wx.setStorageSync('packet_id',data.packet_id)
+              //返回图片url
+              wx.setStorageSync('imgurl',data.imgurl)
+              //订单id
+              wx.setStorageSync('order_id',data.order_id)
             },
             fail: function(err){
               console.log('err',err)
@@ -91,6 +104,7 @@ Page({
   getText(){
     let num = Math.random()*10
     num = Math.ceil(num)
+    wx.setStorageSync('text',this.data.textList[num])
     this.setData({
       text: this.data.textList[num]
     })

@@ -10,13 +10,15 @@ App({
           this.code = res.code
           console.log('code',this.code)
           wx.request({
-            url: 'https://bidou666.cn/tk/public/wx/user/getUserInfo',
+            url: 'https://www.bidou666.cn/tk/public/wx/user/getUserInfo',
             data: {
               code: res.code
             },
             success: function(res) {
                 console.log('login-openid',res.data.openid)
+                wx.setStorageSync('openid', res.data.openid)
                 self.openid = res.data.openid
+                wx.setStorageSync('sessionKey', res.data.session_key)
             }
           })
 
@@ -34,9 +36,10 @@ App({
           wx.getUserInfo({
             success: res => {
                wx.request({
-                  url: 'https://bidou666.cn/tk/public/wx/user/getUserInfodetail',
+                  url: 'https://www.bidou666.cn/tk/public/wx/user/getUserInfodetail',
                   data: {
-                    userdata: res
+                    userdata: res,
+                    session_key:  wx.getStorageSync('sessionKey')
                   }
               })
               // 可以将 res 发送给后台解码出 unionId
@@ -56,9 +59,10 @@ App({
                     wx.getUserInfo({
                       success: res => {
                          wx.request({
-                            url: 'https://bidou666.cn/tk/public/wx/user/getUserInfodetail',
+                            url: 'https://www.bidou666.cn/tk/public/wx/user/getUserInfodetail',
                             data: {
-                              userdata: res
+                              userdata: res,
+                              session_key:  wx.getStorageSync('sessionKey')
                             }
                          })
                         this.globalData.userInfo = res.userInfo
@@ -80,5 +84,18 @@ App({
     userInfo: null
   },
   code: '',
-  openid: ''
+  openid: '',
+  sessionKey: ''
 })
+
+
+
+/*
+  每个微信小程序都可以有自己的本地缓存，
+  可以通过 wx.setStorage（wx.setStorageSync）、
+  wx.getStorage（wx.getStorageSync）、
+  wx.clearStorage（wx.clearStorageSync）
+  可以对本地缓存进行设置、获取和清理。同一个微信用户，
+  同一个小程序 storage 上限为 10MB。
+  localStorage 以用户维度隔离，同一台设备上，A 用户无法读取到 B 用户的数据。
+*/

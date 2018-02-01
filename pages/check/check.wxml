@@ -7,9 +7,9 @@
       <view class="user-name">{{userInfo.nickName}}</view>
     </view>
 	<view class="check-image">
-		<image src="../../images/check.jpg"></image>
+		<image src="{{imgData.sendBlur}}"></image>
 	</view>
-	<text class="check-text">某某某给你准备新年惊喜</text>
-	<view class="check-btn">塞(随机金额红包)查看</view>
+	<text class="check-text">{{imgData.sendName}}给你准备新年惊喜</text>
+	<view class="check-btn" bindtap="wxPay">塞(随机金额红包)查看</view>
 </view>
 
