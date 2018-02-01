@@ -1,5 +1,4 @@
 //app.js
-
 App({
   onLaunch: function () {
     // 登录
@@ -7,16 +6,17 @@ App({
       success: res => {
         // 发送 res.code 到后台换取 openId, sessionKey, unionId
         if( res.code ) {
+          const self = this
           this.code = res.code
+          console.log('code',this.code)
           wx.request({
             url: 'https://bidou666.cn/tk/public/wx/user/getUserInfo',
             data: {
               code: res.code
             },
             success: function(res) {
-                console.log('codecode',res.data)
-                wx.setStorageSync( "OPEN_ID", res.data.openid)
-                wx.setStorageSync( "SESSION_KEY", res.data.session_key)
+                console.log('login-openid',res.data.openid)
+                self.openid = res.data.openid
             }
           })
 
@@ -36,12 +36,8 @@ App({
                wx.request({
                   url: 'https://bidou666.cn/tk/public/wx/user/getUserInfodetail',
                   data: {
-                      userdata: res,
-                      session_key : wx.getStorageSync( "SESSION_KEY"),
-                  },
-                  success: function(resp) {
-                      wx.setStorageSync( "userInfo", resp.data.data)
-                  },
+                    userdata: res
+                  }
               })
               // 可以将 res 发送给后台解码出 unionId
               this.globalData.userInfo = res.userInfo
@@ -53,12 +49,36 @@ App({
               }
             }
           })
+        }else{
+           wx.authorize({
+                scope: 'scope.userInfo',
+                success() {
+                    wx.getUserInfo({
+                      success: res => {
+                         wx.request({
+                            url: 'https://bidou666.cn/tk/public/wx/user/getUserInfodetail',
+                            data: {
+                              userdata: res
+                            }
+                         })
+                        this.globalData.userInfo = res.userInfo
+                        if (this.userInfoReadyCallback) {
+                          this.userInfoReadyCallback(res)
+                        }
+                      }
+                    })
+                }
+           })
         }
       }
+    })
+    wx.setEnableDebug({                     //打开调试开关
+        enableDebug: true
     })
   },
   globalData: {
     userInfo: null
   },
-  code: ''
+  code: '',
+  openid: ''
 })

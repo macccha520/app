@@ -1,8 +1,5 @@
 // pages/upload.js
-
 const app = getApp()
-
-
 Page({
   data: {
     userInfo: {},
@@ -17,30 +14,33 @@ Page({
   },
   onLoad: function (options) {
     const self = this
-      wx.getStorage({
-        key: 'userinfo',
-        success: function(res) {
-            self.setData({
-              userInfo: res.data
-            })
-        } 
+    wx.getStorage({
+      key: 'userinfo',
+      success: function(res) {
+          self.setData({
+            userInfo: res.data
+          })
+      } 
     })
+  },
+  onReady:function(options){
+    console.log('upload-openid2',app.openid)
+    console.log('upload-code',app.code)
   },
   onShareAppMessage: function (res) {
       if (res.from === 'button') {
-         //console.log(res.target)            // 来自页面内转发按钮  
+         console.log(res.target)         // 来自页面内转发按钮  
       }
       return {
         title: '我刚上传了一张照片,看看是啥',
-        path: 'pages/check/check?packet_id='+ wx.getStorageSync('packet_id'),
-        imageUrl: wx.getStorageSync('uploadFile') ? wx.getStorageSync('uploadFile') : '../../images/timg.jpg',
+        path: 'pages/check/check',
         success: function(res) {
           console.log('success')
         },
         fail: function(res) {
           console.log('error',res)
         }
-     }
+      }
   },
   uploadImg(){
     const self = this
@@ -52,7 +52,7 @@ Page({
         // 返回选定照片的本地文件路径列表，tempFilePath可以作为img标签的src属性显示图片
         var tempFilePaths = res.tempFilePaths
         self.setData({
-          imageUrl: tempFilePaths[0]  
+          imageUrl: tempFilePaths[0]
         })
 
         wx.uploadFile({
@@ -60,13 +60,11 @@ Page({
             filePath: tempFilePaths[0],
             name: 'image',
             formData:{
-              'openid': wx.getStorageSync("OPEN_ID"),
-              'text': wx.getStorageSync("text")
+              'user': 'test'
             },
-            success: function(resp){
-                var data = JSON.parse(resp.data)
-                wx.setStorageSync('uploadFile', data.imgurl)
-                wx.setStorageSync('packet_id',1)
+            success: function(res){
+              var data = res.data
+              console.log('upload',res)
             },
             fail: function(err){
               console.log('err',err)
@@ -93,7 +91,6 @@ Page({
   getText(){
     let num = Math.random()*10
     num = Math.ceil(num)
-    wx.setStorageSync("text",this.data.textList[num])
     this.setData({
       text: this.data.textList[num]
     })

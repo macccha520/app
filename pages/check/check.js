@@ -1,14 +1,10 @@
 // pages/check.js
-
 const app = getApp()
-
 Page({
   data: {
     userInfo: {}
   },
   onLoad: function (options) {
-    console.log(options)     
-    console.log("接收到的参数是packet_id="+options.str);  
     const self = this
     wx.getStorage({
       key: 'userinfo',
@@ -18,8 +14,10 @@ Page({
           })
       } 
     })
-     console.log(wx.getStorageSync("OPEN_ID"))
-
+    console.log('check-app',app)
+  },
+  onReady:function(options){
+    console.log('check-openid',app.openid)
   },
   onShareAppMessage: function () {
     
