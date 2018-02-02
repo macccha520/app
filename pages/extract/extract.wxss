@@ -8,13 +8,20 @@
 	border-bottom: 1px solid #ccc;
 	text-align: left;
 	margin-bottom: 20px;
+	position: relative;
 }
 .extract-put text{
 	display: inline-block;
 	font-size: 50px;
+	position: absolute;
+	left:0px;
+	bottom:0px;
 }
 .extract-put input{
 	display: inline-block;
+	font-size: 33px;
+	padding-left: 50px;
+	font-weight: bold;
 }
 .hint{
 	font-size: 13px;
@@ -25,7 +32,7 @@
 	margin-top: 60px;
 }
 .btn-extract view{
-	width:80px;
+	width:130px;
 	height:65rpx;
 	line-height: 65rpx;
 	background: #1aad19;

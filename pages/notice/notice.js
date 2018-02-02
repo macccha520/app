@@ -4,7 +4,9 @@ Page({
   
   },
   onLoad: function (options) {
-  
+    wx.setNavigationBarTitle({
+          title: '公告'
+    })
   },
   onShareAppMessage: function () {
   

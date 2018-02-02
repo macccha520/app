@@ -7,11 +7,12 @@
     "pages/rank/rank",
     "pages/extract/extract",
     "pages/check/check",
-    "pages/common/common"
+    "pages/common/common",
+    "pages/checkdetail/checkdetail"
   ],
   "window": {
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#fff",
+    "navigationBarBackgroundColor": "#f13612",
     "navigationBarTitleText": "WeChat",
     "navigationBarTextStyle": "black"
   }

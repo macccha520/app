@@ -22,6 +22,9 @@ Page({
           })
       } 
     })
+    wx.setNavigationBarTitle({
+          title: '上传图片'
+    })
   },
   onReady:function(options){
     console.log('upload-openid2',app.openid)

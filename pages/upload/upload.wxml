@@ -20,8 +20,8 @@
 		</view>
 	</view>
 	<view class="btn-share">
-	  <button type="primary" open-type="share"> 发给朋友讨红包 </button>
-      <button type="primary"> 分享到朋友圈 </button>
+	  <button type="primary" open-type="share" hover-class="none"> 发给朋友讨红包 </button>
+      <!-- <button type="primary"> 分享到朋友圈 </button> -->
 	</view>
 	<view class="btn-container">
 	  <view bindtap="rankPage">排行榜</view>

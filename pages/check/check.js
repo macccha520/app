@@ -20,6 +20,9 @@ Page({
           })
       } 
     })
+    wx.setNavigationBarTitle({
+          title: '查看图片'
+    })
   //图片
    wx.request({
         url: 'https://www.bidou666.cn/tk/public/wx/user/getPacketBlur', 
@@ -32,9 +35,24 @@ Page({
             'content-type': 'application/json' 
         },
         success: function(res) {
+            console.log(options)
+            console.log(res.data)
             self.setData({
                 imgData: res.data
             })
+            //红包已支付 去详情页
+            if( res.data.packet_status == 1){
+              wx.hideLoading({
+                    title: '可查看详情',
+                    icon: 'loading',
+                    duration: 1000,
+                    complete: function() {
+                        wx.navigateTo({
+                          url: '../checkdetail/checkdetail?packet_id='  + options.packet_id
+                        })
+                    }
+              })
+            }
         }
     })
   },
@@ -59,7 +77,9 @@ Page({
         },
         success: function(res) {
           console.log(res.data)   //支付参数
-            wx.requestPayment({
+
+          if( res.data.code == 1){
+              wx.requestPayment({
                'timeStamp': res.data.timeStamp,
                'nonceStr': res.data.nonceStr,
                'package': res.data.package,
@@ -67,13 +87,22 @@ Page({
                'paySign': res.data.paySign,
                'success':function(res){
                   //跳
-                  wx.navigateTo({
-                      url: '../rank/rank'
+                   wx.navigateTo({
+                      url: '../checkdetail/checkdetail?packet_id='  + options.packet_id
                   })
                },
                'fail':function(res){
+                  
                }
             })
+          }
+          else {
+              wx.showToast({
+                title: res.data.msg,
+                icon: 'success',
+                duration: 2000
+              })
+          }  
         }
     })
   }

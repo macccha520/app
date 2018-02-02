@@ -43,13 +43,13 @@
    width:600rpx;
    margin:30rpx auto;
    display: flex;
-   justify-content: space-between;
+   justify-content: center;
    text-align: center;
 }
 .btn-share button{
-  width:270rpx;
-  height:70rpx;
-  line-height: 70rpx;
+  width:600rpx;
+  height:76rpx;
+  line-height: 76rpx;
   background: #ff0808;
   color:#ffffff;
   border-radius: 6px;

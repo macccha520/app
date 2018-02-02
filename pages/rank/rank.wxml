@@ -1,2 +1,23 @@
 <!--pages/rank.wxml-->
-<text>排行榜</text>
+<view class="rank">
+	<view class="logo-container">
+	  <view class="logo">
+	    <image src="../../images/timg.jpg"></image>
+	  </view>
+	  <view class="user-name">{{userInfo.nickName}}</view>
+	</view>
+	<view class="rank-container">
+		<view class="rank-list rank-top">
+			<view>头像</view>
+			<view>等级</view>
+			<view>人数</view>
+		</view>
+
+		<view class="rank-list" wx:for="{{rankInfo}}" wx:for-item="value" wx:key="rank">
+			<view class="rank-img"><image src="{{ value.avatarUrl }}"></image></view>
+			<view>{{ value.rank }}</view>
+			<view> {{ value.count }} </view>
+		</view>
+	
+	</view>
+</view>
