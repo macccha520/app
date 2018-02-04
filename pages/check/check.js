@@ -8,7 +8,6 @@ Page({
   },
   onLoad: function (options) {
     const self = this
-
     self.setData({
         options : options
     })
@@ -23,11 +22,11 @@ Page({
     wx.setNavigationBarTitle({
           title: '查看图片'
     })
-  //图片
+   //图片
    wx.request({
         url: 'https://www.bidou666.cn/tk/public/wx/user/getPacketBlur', 
         data: {
-            'openid' : app.openid,
+            'openid' : options.openid,
             'packet_id' : options.packet_id,
             'order_id' : options.order_id
         },
@@ -35,8 +34,7 @@ Page({
             'content-type': 'application/json' 
         },
         success: function(res) {
-            console.log(options)
-            console.log(res.data)
+            console.log('check-success',res.data)
             self.setData({
                 imgData: res.data
             })
@@ -53,22 +51,34 @@ Page({
                     }
               })
             }
+        },
+        fail:function(res){
+          cosole.log('check-fail',res)
         }
     })
   },
-
   onReady:function(options){
       console.log('check-openid',app.openid)
   },
   onShareAppMessage: function () {
       
   },
-
+  noticePage(){
+    wx.navigateTo({
+      url: '../notice/notice'
+    })
+  },
+  commonPage(){
+    wx.navigateTo({
+      url: '../common/common'
+    })
+  },
   wxPay:function(){
+       const self = this
        wx.request({
         url: 'https://www.bidou666.cn/tk/public/wx/user/minipay', //请求支付参数
         data: {
-            'openid' : app.openid,
+            'openid' : this.options.openid,
             'order_id' : this.options.order_id,
             'packet_id' : this.options.packet_id
         },
@@ -76,8 +86,8 @@ Page({
             'content-type': 'application/json' // 默认值
         },
         success: function(res) {
-          console.log(res.data)   //支付参数
-
+           //支付参数
+           console.log('check-pay-success',res)
           if( res.data.code == 1){
               wx.requestPayment({
                'timeStamp': res.data.timeStamp,
@@ -88,11 +98,11 @@ Page({
                'success':function(res){
                   //跳
                    wx.navigateTo({
-                      url: '../checkdetail/checkdetail?packet_id='  + options.packet_id
+                      url: '../checkdetail/checkdetail?packet_id=' + self.options.packet_id
                   })
                },
                'fail':function(res){
-                  
+                  console.log('payfail',res)
                }
             })
           }

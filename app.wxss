@@ -1,9 +1,60 @@
 /**app.wxss**/
+page{
+ width:100%;
+ min-height:100%;
+ background: #ffffff;
+}
 .container {
   width:100%;
   height: 100%;
   box-sizing: border-box;
   background: #ffffff;
+  position: relative;
+}
+.container-bac{
+	width:100%;
+	min-height:1200rpx;
+}
+.content{
+	width:100%;
+	position: absolute;
+	left:0px;
+	top:0px;
+	box-sizing: border-box;
+}
+.comomon-container{
+	width:100%;
+	box-sizing: border-box;
+	padding:10rpx 10rpx;
+	height:160rpx;
+	margin-top: 60rpx;
+}
+.comomon-option{
+	float: left;
+	width:130rpx;
+	height:130rpx;
+	border-radius: 100%;
+	color: #ffffff;
+	background: #ed7671;
+	text-align: center;
+	line-height: 130rpx;
+	font-size: 50rpx;
+}
+.comomon-dot{
+	float: left;
+	width:10rpx;
+	height:100%;
+	margin-left: 10rpx;
+	border-right: 5px dotted #ed7671;
+}
+.common-content{
+   float: left;
+   width:470rpx;
+   box-sizing: border-box;
+   margin-left: 10rpx;
+}
+.common-text{
+	margin-top:0rpx;
 }
 .logo-container{
 	text-align: center;
@@ -33,4 +84,18 @@
 	width:100%;
 	min-height: 300rpx;
 	font-size: 15px;
+}
+.service{
+	width:100%;
+	font-size: 16px;
+	text-align: center;
+	color:#60584f;
+	margin-top: 80rpx;
+}
+.service text:nth-of-type(1){
+	border-right: 1px solid #60584f;
+	padding-right: 10px;
+}
+.service text:nth-of-type(2){
+	padding-left: 10px;
 }

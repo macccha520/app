@@ -1,35 +1,45 @@
 /* pages/upload.wxss */
-.upload{
+.content{
 	text-align: center;
 }
+.obtain-packet{
+	width:390rpx;
+	height:80rpx;
+	line-height: 80rpx;
+	border:1px solid #f13612;
+	color:#f13612;
+	margin-top: 30px;
+	margin-bottom: 30px;
+	border-radius: 16rpx;
+	float: right;
+	text-indent: 30rpx;
+	text-align: left;
+}
 .upload-container{
-	width:600rpx;
-	min-height:400rpx;
-	border:1px solid #ccc;
+	width:650rpx;
 	margin:30rpx auto;
 	text-align: left;
 	position: relative;
+	border:1px solid #ccc;
+	padding:5px 5px;
+	box-sizing: border-box;
+	margin-bottom:86rpx;
+	margin-bottom: 0px;
 }
 .upload-img{
 	width:100%;
+}
+.upload-btn{
+	width:650rpx;
+	height:78rpx;
+	line-height: 78rpx;
+	margin-top: 60rpx;
 }
 .upload-list{
 	/*position: absolute;
 	left:20rpx;
 	bottom: 5px;*/
 	margin-left: 20rpx;
-}
-.upload-icon{
-	display: inline-block;
-	width:30px;
-	height:25px;
-	margin-right:10px;
-}
-.upload-emoji{
-	display: inline-block;
-	width:25px;
-	height:25px;
-	margin-right:5px;
 }
 .text-btn{
 	width:600rpx;
@@ -40,32 +50,41 @@
 	font-size: 16px;
 }
 .btn-share{
-   width:600rpx;
+   width:650rpx;
    margin:30rpx auto;
    display: flex;
    justify-content: center;
    text-align: center;
 }
 .btn-share button{
-  width:600rpx;
-  height:76rpx;
-  line-height: 76rpx;
+  width:650rpx;
+  height:86rpx;
+  line-height: 86rpx;
   background: #ff0808;
-  color:#ffffff;
-  border-radius: 6px;
-  font-size: 15px;
+  color:#fcd043;
+  letter-spacing: 5rpx;
+  border-radius: 18rpx;
+  font-size: 39rpx;
 }
 .btn-container{
-	width:600rpx;
-	margin:100rpx auto;
+	width:650rpx;
+	margin:0rpx auto;
 	display: flex;
 	justify-content: space-between;
 	text-align: center;
 }
 .btn-container view{
-	width:260rpx;
-	height:65rpx;
-	line-height: 65rpx;
-	background: #ff0808;
-	color:#ffffff;
+	width:290rpx;
+	height:80rpx;
+	line-height: 70rpx;
+	border:3px solid #e2212a;
+	border-radius: 9px;
+	color:#e2212a;
+	font-size:21px;
+}
+.btn-container text{
+	border-bottom:2px solid #e2212a;
+}
+.service{
+	margin-top: 80rpx;
 }

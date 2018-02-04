@@ -1,15 +1,16 @@
 <!--pages/check.wxml-->
-<view class="check">
-	<view class="logo-container">
-      <view class="logo">
-        <image src="../../images/timg.jpg"></image>
-      </view>
-      <view class="user-name">{{userInfo.nickName}}</view>
-    </view>
-	<view class="check-image">
-		<image src="{{imgData.sendBlur}}"></image>
+<view class="conatiner">
+	<image src="../../images/bac2.png" mode="scaleToFill" class="container-bac"></image>
+	<view class="content">
+	  <view class="check-text">{{imgData.sendName}}给你准备了一个新年惊喜</view>
+	  <view class="check-image">
+	  	<image src="{{imgData.sendBlur}}"></image>
+	  </view>
+	  <view class="check-btn" bindtap="wxPay">塞红包给对方查阅惊喜</view>
+	  <view class="service">
+	    <text bindtap="noticePage">用户须知</text>
+	    <text bindtap="commonPage">常见问题</text>
+	  </view>
 	</view>
-	<text class="check-text">{{imgData.sendName}}给你准备新年惊喜</text>
-	<view class="check-btn" bindtap="wxPay">塞(随机金额红包)查看</view>
 </view>
 

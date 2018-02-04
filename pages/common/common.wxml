@@ -1,12 +1,33 @@
 <!--pages/common.wxml-->
-<view class="common">
-	<view class="common-title">常见问题</view>
-	<text class="common-text">在哪里提现?提现收取手续费吗</text>
-	<view>在"一键提现",进入提现页面,输入金额即提现,提现金额每次至少2元,平台收取2%手续费。</view>
-	<text class="common-text">提示提现成功怎么还未到账?</text>
-	<view>提现申请成功后1-5个工作日会到账微信零钱(或银行卡),请耐心等候哦。如有疑问欢迎随时联系客服咨询。</view>
-	<text class="common-text">如何联系客服?</text>
-	<view>(客服在线时间:9:00-18:00)</view>
-	<view>您可以点击本页面下方联系我们的"在线客服;"也可以点击咨询电话拨打我们的客服电话在线客服。</view>
-	<view class="common-btn" bindtap="indexPage">返回首页</view>
+<view class="container">
+	<image src="../../images/bac.png" mode="scaleToFill" class="container-bac"></image>
+  <view class="content">
+  	<view class="common-title">常见问题</view>
+  	<view class="comomon-container">
+  		<view class="comomon-option">01</view>
+  		<view class="comomon-dot"></view>
+  		<view class="common-content">
+  		  <view class="common-text">在哪里提现?提现收取手续费吗</view>
+  		  <view class="common-text">在"一键提现",进入提现页面,输入金额即提现,提现金额每次至少2元,平台收取2%手续费。</view>
+  		</view>
+  	</view>
+  	<view class="comomon-container">
+  		<view class="comomon-option">02</view>
+  		<view class="comomon-dot"></view>
+  		<view class="common-content">
+  		  <view class="common-text">提示提现成功怎么还未到账?</view>
+  		  <view class="common-text">提现申请成功后1-5个工作日会到账微信零钱(或银行卡),请耐心等候哦。如有疑问欢迎随时联系客服咨询。</view>
+  		</view>
+  	</view>
+  	<view class="comomon-container">
+  		<view class="comomon-option">03</view>
+  		<view class="comomon-dot"></view>
+  		<view class="common-content">
+  		  <view class="common-text">如何联系客服?</view>
+  		  <view class="common-text">(客服在线时间:9:00-18:00)</view>
+  		  <view class="common-text">您可以点击本页面下方联系我们的"在线客服;"也可以点击咨询电话拨打我们的客服电话在线客服。</view>
+  		</view>
+  	</view>
+  	<view class="common-describe">游戏仅为逗大家新年一乐，请大家文明参与</view>
+  </view>
 </view>

@@ -1,32 +1,18 @@
 /* pages/notice.wxss */
-.notice{
+.content{
 	text-align: left;
-	padding:10px 20px;
+	padding:20rpx 50rpx;
 	font-size: 13px;
 	line-height: 20px;
+	padding-right: 30rpx;
 }
 .common-title{
-	width:260rpx;
-	height:60rpx;
-	line-height: 60rpx;
-	color:#f13612;
-	border:1px solid #f13612;
-	text-align: center;
-	border-radius: 20px;
-	transform: translateX(-50px);
+	color:#ed7671;
+	font-size: 26px;
+	margin-top: 60rpx;
 }
-.common-text{
-	display: inline-block;
-	margin-top: 20px;
-}
-.common-btn{
-	width:350rpx;
-	height:65rpx;
-	line-height: 65rpx;
-	margin:30px auto;
-	background: #f13612;
-	color:#ffffff;
-	text-align: center;
-	font-size: 16px;
-	border-radius: 5px;
+.common-describe{
+	font-size: 34rpx;
+	color:#ed7671;
+	margin-top: 60rpx;
 }

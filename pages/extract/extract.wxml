@@ -1,17 +1,22 @@
 <!--pages/extract.wxml-->
-<view class="extract">
-	<view style="margin-top:100px;">提现到零钱</view>
-    <view class="extract-put">
-    	<text>￥</text>
-    	<input placeholder="" auto-focus/>
-    </view>
-    <text class="hint">工作日提现到零钱,收取2%的手续费</text>
-    <view class="btn-extract">
-    	<view>确定</view>
-    	<view bindtap="indexPage">返回</view>
-    </view>
-    <view class="service">
-    	<text bindtap="commonPage">常见问题</text>
-    	<text>联系客服</text>
+<view class="container">
+    <image src="../../images/bac.png" mode="scaleToFill" class="container-bac"></image>
+    <view class="content">
+      <view class="extract-count">
+          <view>
+              <text class="extract-num" style="font-size: 70rpx">{{ money }}</text>
+              <text>当前获得红包(元)</text>
+          </view>
+      </view>
+      <view class="extract-put">
+        <text style="color:#a5a5a5;">￥</text>
+        <input placeholder="" type="digit" auto-focus/>
+      </view>
+      <text class="hint">*输入金额提现到零钱包，平台收取2%手续费</text>
+      <view bindtap="extractCash" class="btn-extract">一键提现</view>
+      <view class="service">
+        <text bindtap="noticePage">用户须知</text>
+        <text bindtap="commonPage">常见问题</text>
+      </view>
     </view>
 </view>

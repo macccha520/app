@@ -1,15 +1,12 @@
 <!--pages/check.wxml-->
-<view class="check">
-	<view class="logo-container">
-      <view class="logo">
-        <image src="../../images/timg.jpg"></image>
-      </view>
-      <view class="user-name">{{userInfo.nickName}}</view>
-    </view>
-	<view class="check-image">
-		<image src="{{ imgData.sendImg}}"></image>
+<view class="container">
+	<image src="../../images/bac.png" mode="scaleToFill" class="container-bac"></image>
+	<view class="content">
+	  	<view class="check-image">
+	  		<image src="{{ imgData.sendImg}}" mode="widthFix"></image>
+	  	</view>
+	  	<text class="check-text">{{	imgData.sendMessage }}</text>
+	  	<view class="check-btn" bindtap="Index">我也来玩一下</view>
 	</view>
-	<text class="check-text">{{	imgData.sendMessage }}</text>
-	<view class="check-btn" bindtap="Index">首页</view>
 </view>
 

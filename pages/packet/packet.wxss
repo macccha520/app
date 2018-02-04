@@ -1,8 +1,6 @@
 /* pages/packet.wxss */
-.packet{
+.content{
 	text-align: center;
-	background: #dedee2;
-	height:1203rpx;
 }
 .receive-top{
   background: #ffffff;
@@ -38,7 +36,7 @@
 }
 .packet-nav{
 	background: #ffffff;
-	margin-top: 20px;
+	margin-top:10px;
 	height:260rpx;
 	display: flex;
 	justify-content: center;

@@ -10,7 +10,8 @@ Page({
     '事业如日中天，恋人亲密无间'
     ],
     text: '春风得意马蹄急，愿你幸福又如意',
-    imageUrl: ''
+    imageUrl: '',
+    isUpload: false
   },
   onLoad: function (options) {
     const self = this
@@ -26,31 +27,21 @@ Page({
           title: '上传图片'
     })
   },
-  onReady:function(options){
-    console.log('upload-openid2',app.openid)
-    console.log('upload-code',app.code)
+  onShow:function(options){
+    
   },
   onShareAppMessage: function (res) {
-      if (res.from === 'button') {
-         console.log(res.target)         // 来自页面内转发按钮  
-      }
-
-      if( wx.getStorageSync('imgurl') && wx.getStorageSync('packet_id') && wx.getStorageSync('order_id'))
-      {
-        return {
-          title: '我刚上传了一张照片,看看是啥',
-          path: 'pages/check/check?packet_id='+ wx.getStorageSync('packet_id')+'&order_id='+ wx.getStorageSync('order_id'),
-          imageUrl : wx.getStorageSync('imgurl'),
-          success: function(res) {
-            console.log('success')
-          },
-          fail: function(res) {
-            console.log('error',res)
-          }
-        }
-      } else {
-
-      }
+     return {
+       title: '我刚上传了一张照片,看看是啥',
+       path: 'pages/check/check?packet_id='+ wx.getStorageSync('packet_id')+'&order_id='+ wx.getStorageSync('order_id')+ '&openid='+app.openid,
+       imageUrl : wx.getStorageSync('imgurl'),
+       success: function(res) {
+         console.log('onShare-success',JSON.stringify(res))
+       },
+       fail: function(res) {
+         console.log('error',JSON.stringify(res))
+       }
+     }
   },
   uploadImg(){
     const self = this
@@ -64,6 +55,10 @@ Page({
         self.setData({
           imageUrl: tempFilePaths[0]
         })
+        wx.showLoading({
+          title: '图片上传中',
+          mask: true
+        })
         wx.uploadFile({
             url: 'https://bidou666.cn/tk/public/wx/user/uploadUserImgs',
             filePath: tempFilePaths[0],
@@ -73,7 +68,7 @@ Page({
               'text' :    wx.getStorageSync('text') ? wx.getStorageSync('text') : '春风得意马蹄急，愿你幸福又如意'
             },
             success: function(res){
-              
+              wx.hideLoading()
               var data  = JSON.parse(res.data)
               //返回的红包id
               wx.setStorageSync('packet_id',data.packet_id)
@@ -81,9 +76,23 @@ Page({
               wx.setStorageSync('imgurl',data.imgurl)
               //订单id
               wx.setStorageSync('order_id',data.order_id)
+              wx.showToast({
+                title: '上传成功',
+                icon: 'success',
+                duration: 500
+              })
+              self.setData({
+                isUpload: true
+              })
             },
             fail: function(err){
               console.log('err',err)
+              wx.hideLoading()
+              wx.showToast({
+                title: '图片上传失败,请重新上传',
+                icon: 'success',
+                duration: 500
+              })
             }
         })
       }
@@ -102,6 +111,21 @@ Page({
   extractPage(){
     wx.navigateTo({
       url: '../extract/extract'
+    })
+  },
+  packetPage(){
+    wx.navigateTo({
+      url: '../packet/packet'
+    })
+  },
+  noticePage(){
+    wx.navigateTo({
+      url: '../notice/notice'
+    })
+  },
+  commonPage(){
+    wx.navigateTo({
+      url: '../common/common'
     })
   },
   getText(){

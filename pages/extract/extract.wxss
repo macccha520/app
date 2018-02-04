@@ -1,14 +1,38 @@
 /* pages/extract.wxss */
-.extract{
+.content{
 	text-align: center;
 }
+.extract-count{
+	width:350rpx;
+	height:350rpx;
+	background: #fbddb8;
+	color:#ffffff;
+	margin:100rpx auto;
+	margin-bottom: 30rpx;
+	border-radius: 100%;
+	padding-top: 25rpx;
+	padding-left: 25rpx;
+	box-sizing: border-box;
+}
+.extract-count view{
+	width:300rpx;
+	height:300rpx;
+	background: #d73c1e;
+	border-radius: 100%;
+	padding-top: 70rpx;
+	box-sizing: border-box;
+}
+.extract-count text{
+	display: inline-block;
+	font-size: 26rpx;
+}
 .extract-put{
-	width:600rpx;
-	margin:100px auto;
-	border-bottom: 1px solid #ccc;
+	width:500rpx;
+	margin:150rpx auto;
 	text-align: left;
 	margin-bottom: 20px;
 	position: relative;
+	background: #ffffff;
 }
 .extract-put text{
 	display: inline-block;
@@ -19,35 +43,29 @@
 }
 .extract-put input{
 	display: inline-block;
-	font-size: 33px;
+	font-size: 50px;
 	padding-left: 50px;
 	font-weight: bold;
+	height:60px;
 }
 .hint{
 	font-size: 13px;
+	color:#000000;
 }
 .btn-extract{
-	display: flex;
-	justify-content: center;
-	margin-top: 60px;
-}
-.btn-extract view{
-	width:130px;
-	height:65rpx;
-	line-height: 65rpx;
-	background: #1aad19;
+	width:500rpx;
+	height:90rpx;
+	line-height: 90rpx;
+	background: #009944;
 	color:#ffffff;
 	margin-right: 20px;
 	border-radius: 3px;
+	font-size: 50rpx;
+	border-radius: 10rpx;
+	letter-spacing: 6rpx;
+	margin: 60px auto;
+	margin-bottom: 0px;
 }
 .service{
-	width:100%;
-	font-size: 12px;
-	position: fixed;
-	left:0px;
-	bottom: 10px;
-	text-align: center;
-}
-.service text{
-	margin-right: 20px;
+	margin-top: 60rpx;
 }

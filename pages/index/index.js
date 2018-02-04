@@ -17,8 +17,12 @@ Page({
     })
   },
   onLoad: function () {
+    console.log('motto',this.data.motto)
     wx.setNavigationBarTitle({
           title: '首页'
+    })
+    wx.showShareMenu({
+      withShareTicket: true
     })
     if (app.globalData.userInfo) {
       wx.setStorage({
@@ -60,7 +64,6 @@ Page({
     }
   },
   getUserInfo: function(e) {
-    console.log(e)
     app.globalData.userInfo = e.detail.userInfo
     this.setData({
       userInfo: e.detail.userInfo,
@@ -90,6 +93,11 @@ Page({
   extractPage(){
     wx.navigateTo({
       url: '../extract/extract'
+    })
+  },
+  commonPage(){
+    wx.navigateTo({
+      url: '../common/common'
     })
   }
 })

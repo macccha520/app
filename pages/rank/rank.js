@@ -3,8 +3,10 @@ const app = getApp()
 
 Page({
   data: {
+    src:'',
     userInfo: {},
-    rankInfo: {}
+    rankInfo: {},
+    money: ''
   },
   onLoad: function (options) {
     const self = this
@@ -16,7 +18,10 @@ Page({
           })
       } 
     })
-   wx.request({
+    this.setData({
+      src: app.globalData.userInfo.avatarUrl
+    })
+    wx.request({
         url: 'https://www.bidou666.cn/tk/public/wx/user/index', 
         data: {
             'openid' : app.openid,
@@ -25,8 +30,9 @@ Page({
             'content-type': 'application/json' 
         },
         success: function(res) {
-             self.setData({
-                rankInfo: res.data
+            self.setData({
+                rankInfo: res.data.list,
+                money: res.data.money
             })
         }
     })
