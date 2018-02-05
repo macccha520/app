@@ -34,7 +34,7 @@ Page({
             'content-type': 'application/json' 
         },
         success: function(res) {
-            console.log('check-success',res.data)
+            //console.log('check-success',res.data)
             self.setData({
                 imgData: res.data
             })
@@ -78,8 +78,8 @@ Page({
        wx.request({
         url: 'https://www.bidou666.cn/tk/public/wx/user/minipay', //请求支付参数
         data: {
-            'openid' : this.options.openid,
-            'order_id' : this.options.order_id,
+            'openid' :  app.openid,
+            'order_id' :  this.options.order_id,
             'packet_id' : this.options.packet_id
         },
         header: {
@@ -90,11 +90,11 @@ Page({
            console.log('check-pay-success',res)
           if( res.data.code == 1){
               wx.requestPayment({
-               'timeStamp': res.data.timeStamp,
-               'nonceStr': res.data.nonceStr,
-               'package': res.data.package,
-               'signType': res.data.signType,
-               'paySign': res.data.paySign,
+               'timeStamp':  res.data.timeStamp,
+               'nonceStr':  res.data.nonceStr,
+               'package':   res.data.package,
+               'signType':  res.data.signType,
+               'paySign':   res.data.paySign,
                'success':function(res){
                   //跳
                    wx.navigateTo({
