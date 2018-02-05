@@ -26,15 +26,15 @@ Page({
    wx.request({
         url: 'https://www.bidou666.cn/tk/public/wx/user/getPacketBlur', 
         data: {
-            'openid' : options.openid,
-            'packet_id' : options.packet_id,
-            'order_id' : options.order_id
+            'send_openid' : options.openid,
+            'openid' : app.openid,
+            'packet_id' : options.packet_id, 
         },
         header: {
             'content-type': 'application/json' 
         },
         success: function(res) {
-            //console.log('check-success',res.data)
+            console.log('check-success',res.data)
             self.setData({
                 imgData: res.data
             })
@@ -79,6 +79,7 @@ Page({
         url: 'https://www.bidou666.cn/tk/public/wx/user/minipay', //请求支付参数
         data: {
             'openid' :  app.openid,
+            'send_openid' : this.options.openid,
             'order_id' :  this.options.order_id,
             'packet_id' : this.options.packet_id
         },
