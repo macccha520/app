@@ -16,7 +16,7 @@
   		<view class="comomon-dot"></view>
   		<view class="common-content">
   		  <view class="common-text">提示提现成功怎么还未到账?</view>
-  		  <view class="common-text">提现申请成功后1-5个工作日会到账微信零钱(或银行卡),请耐心等候哦。如有疑问欢迎随时联系客服咨询。</view>
+  		  <view class="common-text">提现申请成功后1-5个工作日会到账银行卡,请耐心等候哦。如有疑问欢迎随时联系客服咨询。</view>
   		</view>
   	</view>
   	<view class="comomon-container">

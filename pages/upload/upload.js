@@ -70,6 +70,8 @@ Page({
             success: function(res){
               wx.hideLoading()
               var data  = JSON.parse(res.data)
+
+              //console.log(data)
               //返回的红包id
               wx.setStorageSync('packet_id',data.packet_id)
               //返回图片url

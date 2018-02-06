@@ -64,17 +64,19 @@ Page({
                         'content-type': 'application/json' 
                     },
                     success: function(res) {
-                        if( res.data.code ==1){
-                             wx.showToast({
-                              title: res.data.msg,
-                              icon: 'none',
-                              duration: 2000,
-                              complete: function(){
-                                 wx.navigateTo({
-                                  url: '../index/ibdex'
-                                })
-                              }
-                            })
+                        if( parseInt(res.data.code) ==1){
+
+                            console.log(res.data)
+                            //  wx.showToast({
+                            //   title: res.data.msg,
+                            //   icon: 'none',
+                            //   duration: 2000,
+                            //   complete: function(){
+                            //      wx.navigateTo({
+                            //       url: '../index/ibdex'
+                            //     })
+                            //   }
+                            // })
                         }
                     }
                   })
