@@ -1,0 +1,26 @@
+<!--pages/add.wxml-->
+<view class="container">
+    <image src="../../images/bac.png" mode="scaleToFill" class="container-bac"></image>
+    <view class="content">
+      <view class="add-container">
+      	<view class="add-put">
+      		<text>姓名</text>
+      		<input placeholder="收款人姓名" type="text" value="{{name}}" bindinput ="userNameInput"/>
+      	</view>
+      	<view class="add-put">
+      		<text>卡号</text>
+      		<input placeholder="收款人储蓄卡号" type="text" value="{{cardNum}}" bindinput ="cardNumInput"/>
+      	</view>
+      	<view class="add-put">
+      		<text>银行</text>
+      		<picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}" mode="selector" range-key="name">
+	  		    <view class="picker">
+	  		     {{array[index].name}}
+	  		    </view>
+      		</picker>
+      	</view>
+      </view>
+      <button type="primary" size="default" bindtap="saveCard" class="upload-btn">保存</button>
+    </view>
+</view>
+

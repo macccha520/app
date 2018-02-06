@@ -27,7 +27,7 @@ Page({
         url: 'https://www.bidou666.cn/tk/public/wx/user/getPacketBlur', 
         data: {
             'send_openid' : options.openid,
-            'openid' : app.openid,
+            'openid' :    app.openid,
             'packet_id' : options.packet_id, 
         },
         header: {
@@ -39,7 +39,7 @@ Page({
                 imgData: res.data
             })
             //红包已支付 去详情页
-            if( res.data.packet_status == 1){
+            if( parseInt(res.data.packet_status) == 1){
               wx.hideLoading({
                     title: '可查看详情',
                     icon: 'loading',

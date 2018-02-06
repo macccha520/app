@@ -26,7 +26,7 @@ Page({
      wx.request({
           url: 'https://www.bidou666.cn/tk/public/wx/user/getPackDetail', 
           data: {
-              'openid' : app.openid,
+              'openid' : options.openid,
               'packet_id' : options.packet_id,
           },
           header: {
