@@ -74,8 +74,7 @@ Page({
               wx.setStorageSync('packet_id',data.packet_id)
               //返回图片url
               wx.setStorageSync('imgurl',data.imgurl)
-              //订单id
-              wx.setStorageSync('order_id',data.order_id)
+          
               wx.showToast({
                 title: '上传成功',
                 icon: 'success',

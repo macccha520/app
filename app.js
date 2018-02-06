@@ -79,7 +79,7 @@ App({
       }
     })
     wx.setEnableDebug({                     //打开调试开关
-        enableDebug: false
+        enableDebug: true
     })
   },
   globalData: {
