@@ -11,7 +11,8 @@ Page({
     ],
     text: '春风得意马蹄急，愿你幸福又如意',
     imageUrl: '',
-    isUpload: false
+    isUpload: false,
+    data: ''
   },
   onLoad: function (options) {
     const self = this
@@ -26,6 +27,24 @@ Page({
     wx.setNavigationBarTitle({
           title: '上传图片'
     })
+    wx.request({
+         url: 'https://www.bidou666.cn/tk/public/wx/user/getUserPacket', 
+         data: {
+             'openid' : app.openid ? app.openid : wx.getStorageSync('openid'),
+         },
+         header: {
+             'content-type': 'application/json' 
+         },
+         success: function(res) {
+           
+             self.setData({
+                 data: res.data
+             })
+         },
+         fail:function(res){
+         
+         }
+     })
   },
   onShow:function(options){
     
@@ -36,10 +55,10 @@ Page({
        path: 'pages/check/check?packet_id='+ wx.getStorageSync('packet_id')+'&order_id='+ wx.getStorageSync('order_id')+ '&openid='+app.openid,
        imageUrl : wx.getStorageSync('imgurl'),
        success: function(res) {
-         console.log('onShare-success',JSON.stringify(res))
+         //console.log('onShare-success',JSON.stringify(res))
        },
        fail: function(res) {
-         console.log('error',JSON.stringify(res))
+         //console.log('error',JSON.stringify(res))
        }
      }
   },
@@ -87,7 +106,7 @@ Page({
               })
             },
             fail: function(err){
-              console.log('err',err)
+              //console.log('err',err)
               wx.hideLoading()
               wx.showToast({
                 title: '图片上传失败,请重新上传',

@@ -2,10 +2,20 @@
 <view class="container">
 	<image src="../../images/bac.png" mode="scaleToFill" class="container-bac"></image>
 	<view class="content">
-	  	<view class="check-image">
-	  		<image src="{{ imgData.sendImg}}" mode="widthFix"></image>
-	  	</view>
-	  	<text class="check-text">{{	imgData.sendMessage }}</text>
+	  	<block wx:if="{{ imgData.code == 1}}">
+		  	<view class="check-image">
+	  			<image src="{{ imgData.sendImg}}" mode="widthFix"></image>
+			</view>
+		</block>
+
+		<block wx:if="{{ imgData.code == 2  }}">
+		  <text class="check-text">{{	imgData.sendMessage }}</text>
+		</block>
+
+		<block wx:if="{{ imgData.code == 3  }}">
+		  <text class="check-text">{{	imgData.sendMessage }}</text>
+		</block>
+		
 	  	<view class="check-btn" bindtap="Index">我也来玩一下</view>
 	</view>
 </view>

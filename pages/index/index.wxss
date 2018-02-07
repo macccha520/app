@@ -1,7 +1,7 @@
 /**index.wxss**/
 
 .obtain-packet{
-	width:390rpx;
+	min-width:290rpx;
 	height:80rpx;
 	line-height: 80rpx;
 	border:1px solid #f13612;
@@ -10,6 +10,8 @@
 	border-radius: 16rpx;
 	float: right;
 	text-indent: 30rpx;
+	box-sizing: border-box;
+	padding-right: 26rpx;
 }
 .packet-btn{
   width:350rpx;
@@ -31,7 +33,7 @@
 	width:290rpx;
 	height:80rpx;
 	line-height: 70rpx;
-	border:3px solid #e2212a;
+	border:5rpx solid #e2212a;
 	border-radius: 9px;
 	color:#e2212a;
 	font-size:21px;

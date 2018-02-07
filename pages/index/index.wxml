@@ -3,7 +3,7 @@
   <image src="../../images/bac2.png" mode="scaleToFill" class="container-bac"></image>
   <view class="content">
    <!--  <view class="user-notice" bindtap="noticePage">用户须知</view> -->
-    <view class="obtain-packet" bindtap="packetPage">已收到红包:</view>
+    <view class="obtain-packet" bindtap="packetPage">已收到红包:{{ data.invite_total }}元</view>
     <view class="packet-btn" bindtap="uploadPage"><image src="../../images/packet.png" mode="widthFix"></image></view>
     <view class="btn-container">
       <view bindtap="rankPage"><text>排行榜</text></view>

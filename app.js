@@ -8,14 +8,14 @@ App({
         if( res.code ) {
           const self = this
           this.code = res.code
-          console.log('code',this.code)
+          //console.log('code',this.code)
           wx.request({
             url: 'https://www.bidou666.cn/tk/public/wx/user/getUserInfo',
             data: {
               code: res.code
             },
             success: function(res) {
-                console.log('login-openid',res.data.openid)
+                //console.log('login-openid',res.data.openid)
                 wx.setStorageSync('openid', res.data.openid)
                 self.openid = res.data.openid
                 wx.setStorageSync('sessionKey', res.data.session_key)
@@ -23,7 +23,7 @@ App({
           })
 
         } else {
-            console.log('获取用户登录态失败！' + res.errMsg)
+            //console.log('获取用户登录态失败！' + res.errMsg)
         }
         
       }
@@ -79,7 +79,7 @@ App({
       }
     })
     wx.setEnableDebug({                     //打开调试开关
-        enableDebug: true
+        enableDebug: false
     })
   },
   globalData: {

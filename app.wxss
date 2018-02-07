@@ -13,7 +13,7 @@ page{
 }
 .container-bac{
 	width:100%;
-	min-height:1200rpx;
+	min-height:1210rpx;
 }
 .content{
 	width:100%;
@@ -27,7 +27,7 @@ page{
 	box-sizing: border-box;
 	padding:10rpx 10rpx;
 	height:160rpx;
-	margin-top: 60rpx;
+	margin-top: 50rpx;
 }
 .comomon-option{
 	float: left;

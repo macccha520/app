@@ -12,9 +12,9 @@
 	  </view>
 	</view>
 	<view class="rank-user">
-		<text class="rank-count"><text>0.00</text>元</text>
+		<!-- <text class="rank-count"><text>0.00</text>元</text> -->
 		<image src="{{ src }}"></image>
-		<text class="rank-count"><text>0.00</text>元</text>
+		<!-- <text class="rank-count"><text>0.00</text>元</text> -->
 	</view>
 	<view class="rank-container">
 		<view class="rank-list" wx:for="{{rankInfo}}" wx:for-item="value" wx:key="rank">

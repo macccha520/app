@@ -3,29 +3,29 @@
 	<image src="../../images/bac.png" mode="scaleToFill" class="container-bac"></image>
 	<view class="content">
 		<view class="common-title">用户须知</view>
-		<view class="comomon-container">
-			<view class="comomon-option">01</view>
+		<view class="comomon-container" style="height:210rpx;">
+			<view class="comomon-option" style="margin-top:30rpx;">01</view>
 			<view class="comomon-dot"></view>
 			<view class="common-content">
 			  <view class="common-text">点击“送惊喜逗利是”，上传任意图片，即可发送给朋友讨红包，朋友塞钱进红包(红包金额随机，为￥5.20--￥20.18)即可查阅您上传的图片,收获您的新年祝福。</view>
 			</view>
 		</view>
-		<view class="comomon-container">
-			<view class="comomon-option">02</view>
+		<view class="comomon-container" style="height:170rpx;">
+			<view class="comomon-option" style="margin-top:10rpx;">02</view>
 			<view class="comomon-dot"></view>
 			<view class="common-content">
 			  <view class="common-text">点击“已收红包”或“一键提现”即可将您要到的红包提现到银行卡。 注：收到红包需要您主动提现，每次提现平台将收取2%手续费。</view>
 			</view>
 		</view>
-	  	<view class="comomon-container">
-	  		<view class="comomon-option">03</view>
+	  	<view class="comomon-container" style="height:130rpx;">
+	  		<view class="comomon-option" style="margin-top:-5rpx;">03</view>
 	  		<view class="comomon-dot"></view>
 	  		<view class="common-content">
 	  		  <view class="common-text">提现申请成功后1-5个工作日会到账银行卡，请耐心等候哦。如有疑问欢迎随时联系客服咨询 。</view>
 	  		</view>
 	  	</view>
-	  	<view class="comomon-container">
-	  		<view class="comomon-option">04</view>
+	  	<view class="comomon-container" style="height:130rpx;">
+	  		<view class="comomon-option" style="margin-top:-10rpx;">04</view>
 	  		<view class="comomon-dot"></view>
 	  		<view class="common-content">
 	  		  <view class="common-text">点击"已收到红包"或"一键提现"进入提现界面,点击下方的常见问题即可联系客服。</view>

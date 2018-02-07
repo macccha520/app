@@ -3,7 +3,7 @@
 	text-align: center;
 }
 .obtain-packet{
-	width:390rpx;
+	min-width:290rpx;
 	height:80rpx;
 	line-height: 80rpx;
 	border:1px solid #f13612;
@@ -14,6 +14,8 @@
 	float: right;
 	text-indent: 30rpx;
 	text-align: left;
+	box-sizing: border-box;
+	padding-right: 26rpx;
 }
 .upload-container{
 	width:650rpx;
@@ -77,7 +79,7 @@
 	width:290rpx;
 	height:80rpx;
 	line-height: 70rpx;
-	border:3px solid #e2212a;
+	border:5rpx solid #e2212a;
 	border-radius: 9px;
 	color:#e2212a;
 	font-size:21px;

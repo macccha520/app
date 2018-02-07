@@ -8,6 +8,7 @@ Page({
     logo:'../../images/timg.jpg',
     userInfo: {},
     hasUserInfo: false,
+    data: '',
     canIUse: wx.canIUse('button.open-type.getUserInfo')
   },
   //事件处理函数
@@ -17,7 +18,7 @@ Page({
     })
   },
   onLoad: function () {
-    console.log('motto',this.data.motto)
+    const self = this
     wx.setNavigationBarTitle({
           title: '首页'
     })
@@ -62,6 +63,30 @@ Page({
         }
       })
     }
+  },
+  onShow:function(options){
+    const self = this
+     //console.log('app',app.openid)
+     setTimeout(function(){
+       wx.request({
+            url: 'https://www.bidou666.cn/tk/public/wx/user/getUserPacket', 
+            data: {
+                'openid' : app.openid ? app.openid : wx.getStorageSync('openid'),
+            },
+            header: {
+                'content-type': 'application/json' 
+            },
+            success: function(res) {
+                //console.log('res',res)
+                self.setData({
+                    data: res.data
+                })
+            },
+            fail:function(res){
+            
+            }
+        })
+     },500)
   },
   getUserInfo: function(e) {
     app.globalData.userInfo = e.detail.userInfo

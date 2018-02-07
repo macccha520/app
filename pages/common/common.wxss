@@ -14,5 +14,5 @@
 .common-describe{
 	font-size: 34rpx;
 	color:#ed7671;
-	margin-top: 200rpx;
+	margin-top: 100rpx;
 }

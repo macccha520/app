@@ -107,7 +107,7 @@ Page({
                wx.showToast({
                   title: '保存成功',
                   icon: 'success',
-                  duration: 1000,
+                  duration: 2000,
                   complete: function(){
                      wx.navigateTo({
                       url: '../extract/extract'

@@ -2,7 +2,7 @@
 <view class="container">
 	<image src="../../images/bac.png" mode="scaleToFill" class="container-bac"></image>
 	<view class="content">
-		<view class="obtain-packet" bindtap="packetPage">已收到红包:</view>
+		<view class="obtain-packet" bindtap="packetPage">已收到红包:{{ data.invite_total }}元</view>
 	    <button type="primary" size="default" bindtap="uploadImg" class="upload-btn">上传图片</button>
 		<view class="upload-container">
 			<image src="{{imageUrl}}" mode="scaleToFill" class="upload-img"></image>

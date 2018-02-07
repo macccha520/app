@@ -111,7 +111,12 @@ Page({
               wx.showToast({
                 title: res.data.msg,
                 icon: 'success',
-                duration: 2000
+                duration: 2000,
+                complete: function(){
+                  wx.navigateTo({
+                      url: '../checkdetail/checkdetail?packet_id=' + self.options.packet_id
+                  })
+                }
               })
           }  
         }

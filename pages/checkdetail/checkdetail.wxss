@@ -12,6 +12,7 @@
 }
 .check-text{
 	color:#f13612;
+	font-size: 42rpx;
 }
 .check-btn{
 	width:650rpx;
